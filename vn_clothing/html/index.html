@@ -1,0 +1,531 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <link rel="stylesheet" href="form.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <style>
+    
+        /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    </style>
+</head>
+
+
+<body>
+    <div class="lastSection" id="lastSection">
+        <label class="font-weight-bold" for="titles">Rotate</label>
+        <input id="rotate" type="range" class="disabled" min="0" max="720" value="0">
+        <label class="font-weight-bold" for="titles" id="rotateText2" >You may use LEFT and RIGHT arrow keys to rotate your character.</label>
+   <button id="clear" type="button" class="btn btn-secondary">Get Naked</button>
+   <button id="purchase" type="button" class="btn btn-secondary">Create Character</button>
+</div>
+
+    <div id="chardetails">
+        <div class="data">
+            <label class="title2">Project Olympia</label><br>
+            <div class="row">
+            <div class="col-25">
+                <label for="fname" id="firstnamecss">First Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" class="formInput" id="cfname" name="firstname" placeholder="Your first name..">
+                <p id="fnameError" class="error"></p>  
+            </div>
+            
+            </div>
+            <div class="row">
+            <div class="col-25">
+                <label for="lname" id="firstnamecss">Last Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" class="formInput" id="clname" name="lastname" placeholder="Your last name..">
+                <p id="lnameError" class="error"></p> 
+            </div>
+            </div>
+            <div class="row">
+                    <div class="col-25">
+                    <label for="age" id="firstnamecss">Age</label>
+                    </div>
+                    <div class="col-75">
+                    <input type="number" class="formNumber" id="cage" name="age" placeholder="Age">
+                    <p id="ageError" class="error"></p> 
+                    </div>
+                </div>
+            <div class="row">
+            <div class="col-25">
+                <label for="gender" id="firstnamecss">Gender</label>
+            </div>
+            <div class="col-75">
+                    <select id="gender" class = "select">
+                            <option value="0">Male</option>
+                            <option value="1">Female</option>
+                    </select>
+            </div>
+            </div>
+            <div class="button">
+                <div >
+                    <input class="next" type="submit" id="submit" value="Next">
+                </div>
+            </div>
+               
+                
+               
+        </div>
+    </div>
+    
+    <!-- <div id="chardetails">
+        
+
+        <label for="fname">First name:</label>
+        <input type="text" id="cfname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="clname" name="lname"><br><br>
+        <label for="lname">Age</label>
+        <input type="text" id="cage" name="lname"><br><br>
+        <label for="cars">Choose a car:</label>
+
+        <select id="gender">
+          <option value="0">Male</option>
+          <option value="1">Female</option>
+        </select>
+
+        <br>
+        <br>
+        
+        <input type="submit" id="submit" value="Next">
+
+            
+    </div> -->
+    
+ <div id="characters">
+        
+            <label class="title2">Project Olympia</label>
+            <button id="create" type="button" class="btn btn-secondary">Create</button>
+        <div id ="container2" class="container2">
+        <div class="row">
+            <div class="col">
+            <div id="slot">
+                
+            <label class="font-weight-bold" for="titles" id="subject">Name:</label><br>
+            <label class="font-weight-bold" for="titles" id="subject">Age:</label><br>
+            <label class="font-weight-bold" for="titles" id="subject">CK:</label><br>
+            <button id="play" type="button" class="btn btn-secondary">Play</button>
+                </div>
+            </div>      
+            </div>
+        
+      
+            </div>
+            
+    </div>
+    
+
+    <div id="container">
+
+       <div class="menus">
+            <button id="close" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <label class="title2">Project Olympia</label>
+                <label class="subtitle">Character Customization</label>
+        
+                <ul class="nav nav-tabs" >
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" data-toggle="tab" class="tabst" id="headtab">Head</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#clothing" data-toggle="tab" class="tabst" id="clothingstab">Clothing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#accessories" data-toggle="tab" class="tabst" id="otherstab">Others</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#face" data-toggle="tab" class="tabst" id="facetab">Face</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#facial" data-toggle="tab" class="tabst" id="facialtab">Facial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#facial2" data-toggle="tab" class="tabst" id="facialtab2">Facial 2</a>
+                    </li>
+                </ul>
+       </div>
+
+        <form id="form">
+            <div class="form-group">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel">
+                       <div class="section">
+                                <label class="titleLabel" for="titles" id="titles">Hats</label>
+                                <input type="number" id ="hvaluec" class="countert" value="0"/>
+                                <input id="hatDraw" type="range" class="custom-range-head" min="-1" max="100" value="0">    
+                                <input id="hatText" type="range" class="custom-range-head" min="0" max="100" value="0"><br>
+                       </div>
+                       <div class="section">
+                                <label class="titleLabel" for="titles" id="titles">Hair</label>
+                                <input type="valueNumber" id ="hairvaluec" class="countert" value="0"/>
+                                <input id="hairDraw" type="range" class="custom-range-head" min="0" max="100" value="0">
+                                <input id="hairText" type="range" class="custom-range-head" min="0" max="100" value="0"><br>
+                        </div>
+                        <div class="section">
+                                    <label class="titleLabel" for="titles" id="titles">Glasses</label>
+                                    <input type="number" id ="gvaluec" class="countert"/>
+                                    <input id="glassesDraw" type="range" class="custom-range-head" min="0" max="100" value="0">
+                                    <input id="glassesText" type="range" class="custom-range-head" min="0" max="100" value="0"><br>        
+                                
+                            </div>
+                        <div class="section">
+                                    <label class="titleLabel" for="titles" id="titles">Ears</label>
+                                    <input type="number" id ="evaluec" class="countert"/>
+                                    <input id="earsDraw" type="range" class="custom-range-head" min="-1" max="100" value="0">        
+                                    <input id="earsText" type="range" class="custom-range-head" min="0" max="100" value="0">
+                        </div>
+                        <div class="section">
+                                    <label class="titleLabel" for="titles" id="titles">Masks</label>
+                                    <input type="number" id ="mvaluec" class="countert"/>
+                                    <input id="maskDraw" type="range" class="custom-range-head" min="0" max="100" value="0">    
+                                    <input id="maskText" type="range" class="custom-range-head" min="0" max="100" value="0"><br>                
+                            </div>
+                       <div class="section">
+                                <label class="titleLabel" for="titles" id="titles">Facial Hair</label>
+                                <input type="number" id ="facialhairbox" class="countert"/>
+                                <input id="facialhairrange" type="range" class="custom-range-head" min="-1" max="28" value="0">
+                                <input id="facialhaircolorrange" type="range" class="custom-range-head" min="0" max="63" value="0"><br>
+                       </div>
+                      <div class="section">
+                            <button type="button" id="clearhead" class="btn btn-light">Clear Head</button>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="clothing" role="tabpanel">
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Jackets</label>
+                            <input type="number" id ="t2valuec" class="countert"/>
+                            <input id="torso2Draw" type="range" class="custom-range-clothing" min="-1" max="100" value="0">
+                            <input id="torso2Text" type="range" class="custom-range-clothing" min="0" max="100" value="0"><br>
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Undershirt</label>
+                            <input type="number" id ="uvaluec" class="countert"/>
+                            <input id="undershirtDraw" type="range" class="custom-range-clothing" min="-1" max="100" value="0">
+                            <input id="undershirtText" type="range" class="custom-range-clothing" min="0" max="100" value="0"><br>
+                        </div>
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Gloves and Torso</label>
+                            <input type="number" id ="tvaluec" class="countert"/>
+                            <input id="torsoDraw" type="range" class="custom-range-clothing" min="-1" max="100" value="0">
+                            <input id="torsoText" type="range" class="custom-range-clothing" min="0" max="100" value="0"><br>
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Kevlar</label>
+                            <input type="number" id ="kvaluec" class="countert"/>
+                            <input id="kevlarDraw" type="range" class="custom-range-clothing" min="0" max="100" value="0">
+                            <input id="kevlarText" type="range" class="custom-range-clothing" min="0" max="100" value="0"><br>
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Pants</label>
+                            <input type="number" id ="pvaluec" class="countert"/>
+                            <input id="pantsDraw" type="range" class="custom-range-clothing" min="-1" max="100" value="0">
+                            <input id="pantsText" type="range" class="custom-range-clothing" min="0" max="100" value="0"><br>
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Shoes</label>
+                            <input type="number" id ="svaluec" class="countert"/>
+                            <input id="shoesDraw" type="range" class="custom-range-clothing" min="-1" max="100" value="0">
+                            <input id="shoesText" type="range" class="custom-range-clothing" min="0" max="100" value="0">
+                        </div>
+                        <button type="button" id="clearclothing" class="btn btn-light">Clear clothing</button>
+
+                    </div>
+                    <div class="tab-pane fade" id="accessories" role="tabpanel">
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Watches</label>
+                            <input type="number" id ="wvaluec" class="countert"/>
+                            <input id="watchDraw" type="range" class="custom-range-others" min="-1" max="100" value="0">
+                            <input id="watchText" type="range" class="custom-range-others" min="0" max="100" value="0"><br>
+                        </div>
+                        
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Bracelet</label>
+                            <input type="number" id ="bvaluec" class="countert"/>
+                            <input id="braceletDraw" type="range" class="custom-range-others" min="-1" max="100" value="0">
+                            <input id="braceletText" type="range" class="custom-range-others" min="0" max="100" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Parachutes</label>
+                            <input type="number" id ="p2valuec" class="countert"/>
+                            <input id="parachuteDraw" type="range" class="custom-range-others" min="0" max="100" value="0">
+                            <input id="parachuteText" type="range" class="custom-range-others" min="0" max="100" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Badge</label>
+                            <input type="number" id ="b2valuec" class="countert"/>
+                            <input id="badgeDraw" type="range" class="custom-range-others" min="0" max="100" value="0">
+                            <input id="badgeText" type="range" class="custom-range-others" min="0" max="100" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Accessory</label>
+                            <input type="number" id ="avaluec" class="countert"/>
+                            <input id="accessoryDraw" type="range" class="custom-range-others" min="0" max="100" value="0">
+                            <input id="accessoryText" type="range" class="custom-range-others" min="0" max="100" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Chesthair</label>
+                            <input type="number" id ="chesthairbox" class="countert"/>
+                            <input id="chesthairrange" type="range" class="custom-range-face" min="-1" max="17" value="0">
+                            <input id="chesthaircolorrange" type="range" class="custom-range-face" min="0" max="63" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Body Blemishes</label>
+                            <input type="number" id ="bodyblemishesbox" class="countert"/>
+                            <input id="bodyblemishesrange" type="range" class="custom-range-face" min="-1" max="17" value="0">
+                        </div>
+                        <br>
+
+                        <button type="button" id="clearaccessories" class="btn btn-light">Clear accessories</button>
+
+
+                    </div>
+                    <div class="tab-pane fade" id="face" role="tabpanel">
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Skin Color</label>
+                            <input type="number" id ="skincolorbox" class="countert"/>
+                            <input id="skincolorrange" type="range" class="custom-range-face" min="0" max="31" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Eyes</label>
+                            <input type="number" id ="eyescolorbox" class="countert"/>
+                            <input id="eyesrange" type="range" class="custom-range-face" min="-1" max="31" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Blemishes</label>
+                            <input type="number" id ="blemishesbox" class="countert"/>
+                            <input id="blemishesrange" type="range" class="custom-range-face" min="-1" max="22" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Eyebrows</label>
+                            <input type="number" id ="eyebrowsbox" class="countert"/>
+                            <input id="eyebrowsrange" type="range" class="custom-range-face" min="-1" max="33" value="0">
+                            <input id="eyebrowscolorrange" type="range" class="custom-range-others" min="0" max="63" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Ageing</label>
+                            <input type="number" id ="ageingbox" class="countert"/>
+                            <input id="ageingrange" type="range" class="custom-range-face" min="-1" max="14" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Makeup</label>
+                            <input type="number" id ="makeupbox" class="countert"/>
+                            <input id="makeuprange" type="range" class="custom-range-face" min="-1" max="74" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Blush</label>
+                            <input type="number" id ="blushbox" class="countert"/>
+                            <input id="blushrange" type="range" class="custom-range-face" min="-1" max="6" value="0">
+                            <input id="blushcolorrange" type="range" class="custom-range-others" min="0" max="63" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Complexion</label>
+                            <input type="number" id ="complexionbox" class="countert"/>
+                            <input id="complexionrange" type="range" class="custom-range-face" min="-1" max="11" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Sundamage</label>
+                            <input type="number" id ="sundamagebox" class="countert"/>
+                            <input id="sundamagerange" type="range" class="custom-range-face" min="-1" max="10" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Lipstick</label>
+                            <input type="number" id ="lipstickbox" class="countert"/>
+                            <input id="lipstickrange" type="range" class="custom-range-face" min="-1" max="9" value="0"> 
+                            <input id="lipstickcolorrange" type="range" class="custom-range-others" min="0" max="63" value="0">
+                        </div>
+
+                        <div class="section">
+                            <label class="titleLabel" for="titles" id="titles">Moles and/or Frickles</label>
+                            <input type="number" id ="molesbox" class="countert"/>
+                            <input id="molesrange" type="range" class="custom-range-face" min="-1" max="17" value="0">
+                        </div><br>
+
+                        <button type="button" id="clearface" class="btn btn-light">Clear face</button>
+
+                            </div>
+
+                        <div class="tab-pane fade" id="facial" role="tabpanel">
+
+                        <div class="section">    
+                            <label class="titleLabel" for="titles" id="titles">Nose width</label>
+                            <input type="number" id ="Nosewidthbox" class="countert"/>
+                            <input id="Nosewidthrange" type="range" class="custom-range-face" step="0.1" min="-1" max="1" value="0">
+                        </div>
+
+                        <div class="section">   
+                            <label class="titleLabel" for="titles" id="titles">Nose Height</label>
+                            <input type="number" id ="Noseheightbox" class="countert"/>
+                            <input id="Noseheightrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        <div class="section">   
+                            <label class="titleLabel" for="titles" id="titles">Nose Length</label>
+                            <input type="number" id ="Noselengthbox" class="countert"/>
+                            <input id="Noselengthrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        <div class="section">   
+                            <label class="titleLabel" for="titles" id="titles">Nose Bridge</label>
+                            <input type="number" id ="Nosebridgebox" class="countert"/>
+                            <input id="Nosebridgerange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        <div class="section">   
+                            <label class="titleLabel" for="titles" id="titles">Nose Tip</label>
+                            <input type="number" id ="Nosetipbox" class="countert"/>
+                            <input id="Nosetiprange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+                        
+                        <div class="section">   
+                            <label class="titleLabel" for="titles" id="titles">Nose Bridge Shift</label>
+                            <input type="number" id ="Nosebridgeshiftbox" class="countert"/>
+                            <input id="Nosebridgeshiftrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+                        
+                        <div class="section">   
+                            <label class="titleLabel" for="titles" id="titles">Eyebrow Height</label>
+                            <input type="number" id ="Eyebrowheightbox" class="countert"/>
+                            <input id="Eyebrowheightrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+                        
+                        <div class="section">   
+                            <label class="titleLabel" for="titles" id="titles">Eyebrow Width</label>
+                            <input type="number" id ="Eyerowwidthbox" class="countert"/>
+                            <input id="Eyerowwidthrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+                        
+                        <div class="section">   
+                            <label class="titleLabel" for="titles" id="titles">Cheekbone Height</label>
+                            <input type="number" id ="Cheekboneheightbox" class="countert"/>
+                            <input id="Cheekboneheightrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        <div class="section">   
+                            <label class="titleLabel" for="titles" id="titles">Cheekbone Width</label>
+                            <input type="number" id ="Cheekbonewidthbox" class="countert"/>
+                            <input id="Cheekbonewidthrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        <div class="section">   
+                            <label class="titleLabel" for="titles" id="titles">Cheeks Width</label>
+                            <input type="number" id ="Cheekswidthbox" class="countert"/>
+                            <input id="Cheekswidthrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="facial2" role="tabpanel">
+
+                        <div class="section">       
+                            <label class="titleLabel" for="titles" id="titles">Eyes</label>
+                            <input type="number" id ="Eyesbox" class="countert"/>
+                            <input id="Eyesrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+                        
+                        <div class="section">  
+                            <label class="titleLabel" for="titles" id="titles">Lips</label>
+                            <input type="number" id ="Lipsbox" class="countert"/>
+                            <input id="Lipsrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        <div class="section">  
+                            <label class="titleLabel" for="titles" id="titles">Jaw Width</label>
+                            <input type="number" id ="Jawwidthbox" class="countert"/>
+                            <input id="Jawwidthrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        <div class="section">  
+                            <label class="titleLabel" for="titles" id="titles">Jaw Height</label>
+                            <input type="number" id ="Jawheightbox" class="countert"/>
+                            <input id="Jawheightrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        <div class="section">  
+                            <label class="titleLabel" for="titles" id="titles">Chin Length</label>
+                            <input type="number" id ="Chinlengthbox" class="countert"/>
+                            <input id="Chinlengthrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        <div class="section">  
+                            <label class="titleLabel" for="titles" id="titles">Chinp Position</label>
+                            <input type="number" id ="Chinpositionbox" class="countert"/>
+                            <input id="Chinpositionrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>      
+
+                        <div class="section">  
+                            <label class="titleLabel" for="titles" id="titles">Chin Width</label>
+                            <input type="number" id ="Chinwidthbox" class="countert"/>
+                            <input id="Chinwidthrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        <div class="section">  
+                            <label class="titleLabel" for="titles" id="titles">Chin Shape</label>
+                            <input type="number" id ="Chinshapebox" class="countert"/>
+                            <input id="Chinshaperange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+
+                        <div class="section">  
+                            <label class="titleLabel" for="titles" id="titles">Neck Width</label>
+                            <input type="number" id ="Neckwidthbox" class="countert"/>
+                            <input id="Neckwidthrange" type="range" class="custom-range-face" min="-1" max="1" value="0" step="0.1">
+                        </div>
+                        <br>
+                        <button type="button" id="clearfacials" class="btn btn-light">Clear facials</button>
+
+
+                        </div>
+                </div>
+            </div>
+        </form>
+        </div>
+    <script src="./index.js" type="text/javascript"></script>
+    <script src="./form.js" type="text/javascript"></script>
+
+    <script> function setCharacter(charId){
+
+        $.post('http://vn_clothing/spawnped', JSON.stringify({
+            charId
+        
+            }));
+        
+        
+        }</script>
+    
+    
+</body>
+
+</html>
