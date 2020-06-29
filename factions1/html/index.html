@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/6bae8bcd0f.js" crossorigin="anonymous"></script>
+    
+    <style>
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style>
+
+</head>
+    
+
+<body>
+    
+    
+    
+    <div id="container">
+        <div id="row">
+            <div id="col">
+            </div>
+        </div>
+
+
+        <div id="row">
+            <div id="col">
+                <form id="form">
+                    <div class="form-group">
+                        <label id="factionName">Faction Name</label>
+                        <small id="factionType" class="form-text text-muted">Faction Type</small>
+
+                    </div>
+
+                    <a href="#" class="delBtn" id="close">x</a>
+
+                </form>
+            </div>
+
+        </div>
+        <div id="row">
+            <div id="col">
+                <div class="table-wrapper-scroll-y my-custom-scrollbar content-table">
+
+                    <table class="\">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col" class="dCp">Character Name</th>
+                                <th scope="col">Rank</th>
+                                <th scope="col">Kick</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+
+                            <tr><th scope="row">24</th><td>Melvin Evans</td><td><button onclick="" type="submit">X</button></td></tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+    
+
+            </div>
+            
+        </div>
+        
+        <div class = management>
+            
+        <div class="inviteform">
+            
+            <label class="charidbox" id="ranklabel">Invite Faction Member</label><br> 
+        <label class="charidbox" id="charidbox">Character Id</label>
+        <input type="text" id="charidinvite" name="lname" class="invite"><br>
+        <input type="submit" value="Invite" class="invitebutton" id="invitebutton"></div><br>
+        
+        
+        <div class="ranks">
+            
+            <label class="charidbox" id="ranklabel">Create Faction Rank</label><br>
+         <label class="charidbox" id="ranklabel">Rank Name</label>
+        <input type="text" id="rankname" name="lname" class="permissiontextbox" value="">
+            
+        <label class="charidbox" id="wagelabel" type="number">Wage</label>
+        <input type="number" id="rankwage" name="lname" class="permissiontextbox" value="">
+            
+        <input class="checkbox" type="checkbox" id="checkbox" onclick=""><br>
+        <label class="charidbox">Permission</label><br>
+        <input type="submit" value="Create" class="createrank" id="createrank">
+
+        </div>
+            
+        <div class="setrank">
+            
+        <label class="charidbox" id="setranklabel">Set Rank</label><br> 
+        <label class="charidbox" id="setranklabel1">Character Id</label>
+        <input type="text" id="setrankid" name="lname" class="invite">
+
+        <select name="ranks" id="ranks" class = "factionnamedropdown">TEST</select>
+        <br>
+        <input type="submit" value="Set" class="invitebutton" id="setrank"></div><br>
+            
+                 <div class="deleteRank">
+            
+        <label class="charidbox" id="setranklabel1">Delete Rank</label>
+
+        <select name="ranks" id="ranksdel" class = "factionnamedropdown">TEST</select>
+
+        <input type="submit" value="Delete" class="invitebutton" id="deleterankbutton"></div>
+
+        <input type="submit" value="Delete faction" class="deleteFaction" id="deleteFaction">
+            
+
+
+    </div>
+        </div>
+    
+    <div id="container2">
+        
+        <label class="createfactiontitle" id="createfactiontitle">Create your faction</label><br>
+        <label class="createfactiontitle2" id="createfactiontitle2">You currently don't belong to any faction</label>
+        
+        <form>
+  <label class="factionname">Faction Name</label>
+  <input class="factionnamebox" type="text" id="factionnamebox" name="lname"><br>
+    <label for="factions" class="factionname" >Faction type</label>
+
+    <select name="factiontype" class="factionnamedropdown" id="factionnamedropdown">
+      <option value="1">Legal</option>
+      <option value="2">Illegal</option>
+    </select><br>
+  <input class="createfactionbutton" type="submit" id="createfactionbutton">
+        </form>
+            
+    </div>
+    
+    <script src="./index.js" type="text/javascript"></script>
+    <script> function Get(charId, factionid){
+
+        $.post('http://factions1/kickplayer', JSON.stringify({
+            charId,
+            factionid
+        
+            }));
+        
+        
+        }</script>
+</body>
+
+</html>
